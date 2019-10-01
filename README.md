@@ -14,4 +14,4 @@ The document scanner performs image manipulation in 4 steps -
 
 3 Applying perspective transform-to obtain top view of the image as a document.
 
-  -> Four-point-transform was used to transform the document into top-down view which includes the point orderingthe image with these points which orders the four points in the image to assign their repective position as top-left, top-right , bottom-left and bottom-right and then transform to a warped image. These functions are given in file tranform.py.
+  -> Four-point-transform was used to transform the document into top-down view which includes the point ordering which orders the four points in the image to assign their repective position as top-left, top-right , bottom-left and bottom-right and then transform this image with these points to a warped image. These functions are given in file tranform.py.
