@@ -1,10 +1,17 @@
 # DocumentScanner
 My first openCV project - a personal document scanner !!
-The document scanner performs image manipulation in 3 steps -
-Finding the edges
-Finding the contours of the paper
-Applying perspective transform-to obtain top-down view of the image
-![Screenshot](image 06-09-2019 19_14_37.png)
-![Screenshot](Outline 06-09-2019 19_14_59.png)
-![Screenshot](edged 06-09-2019 19_14_37.png)
-![Screenshot](Scanned 06-09-2019 19_14_59.png)
+
+Before performing the actual work of extracting the document in the image, the image is first converted from BGR to Grayscale.
+
+The document scanner performs image manipulation in 4 steps -
+
+1 Finding the edges    
+  -> OpenCV library is used for the canny edge detection in the image. You can find the documentation here (https://docs.opencv.org/trunk/da/d22/tutorial_py_canny.html)
+   
+2 Finding the contours of the paper
+
+ -> Includes finding all the contours in the image and then minimizing it to the conclusion of selection only that contour with 4 points   If the approximated contour has four points, then we can assume that we have found our document. 
+
+3 Applying perspective transform-to obtain top view of the image as a document.
+
+  -> Four-point-transform was used to transform the document into top-down view which includes the point orderingthe image with these points which orders the four points in the image to assign their repective position as top-left, top-right , bottom-left and bottom-right and then transform to a warped image. These functions are given in file tranform.py.
